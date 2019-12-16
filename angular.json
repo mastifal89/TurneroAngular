@@ -28,9 +28,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/fullcalendar/dist/fullcalendar.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/moment/min/moment.min.js",
+              "node_modules/fullcalendar/dist/fullcalendar.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -110,20 +115,14 @@
               "**/node_modules/**"
             ]
           }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "TurneroAngular:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "TurneroAngular:serve:production"
-            }
-          }
         }
       }
-    }},
-  "defaultProject": "TurneroAngular"
+    }
+  },
+  "defaultProject": "TurneroAngular",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
